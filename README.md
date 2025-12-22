@@ -1,5 +1,7 @@
-# Autonomous-Multi-Agent-Stock-Research-System
+# 📈 Autonomous Multi-Agent Stock Research System
+
 An AI-powered stock research orchestrator built with [CrewAI](https://crewai.com) that coordinates specialized agents to produce daily, research-driven stock reports.
+
 ## 🎯 Mission
 
 Every trading day, discover, analyze, and summarize stocks with interesting risk/reward profiles by combining:
@@ -248,3 +250,37 @@ agentic_stock_analysis/
 | **Factual separation** | Clear distinction between facts, analysis, and model outputs |
 | **Risk disclosure** | Key risks and uncertainties explicitly acknowledged |
 | **No guarantees** | No promises of future performance; emphasizes uncertainty |
+
+---
+
+## 📄 Sample Report Output
+
+```markdown
+# Daily Market Brief: Tech Stocks Surge Amid Strong Earnings
+
+## Market Overview
+Today's market exhibited risk-on sentiment...
+
+## Today's Key Drivers
+1. **NVIDIA Reports Strong Earnings** - Impact: Positive
+2. **Fed Signals Rate Hike** - Impact: Negative
+...
+
+## Featured Stock Ideas
+### NVIDIA (NVDA)
+- Thesis: Strong AI demand driving growth
+- Time Horizon: Short-term
+- Risk: High valuation multiples
+
+## Disclaimer
+This newsletter is for informational purposes only...
+```
+
+---
+
+## 🤝 Support
+
+- [CrewAI Documentation](https://docs.crewai.com)
+- [CrewAI GitHub](https://github.com/joaomdmoura/crewai)
+- [CrewAI Discord](https://discord.com/invite/X4JWnZnxPb)
+# AUTONOMOUS-STOCK-RESEARCH-SYSTEM

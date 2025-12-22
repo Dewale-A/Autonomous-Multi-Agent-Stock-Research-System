@@ -1,0 +1,104 @@
+research_daily_market:
+  description: >-
+    You are the Equity & Market News Researcher. For TODAY, gather and summarize
+    the most relevant market news and stock-related headlines that could influence
+    equity prices in the near term.
+
+    Objectives:
+    - Focus on global macro events, sector moves, and company-specific news
+    - Prioritize earnings releases, regulatory actions, M&A, macro data
+    - For each item: separate FACTS from INTERPRETATION
+    - Tag impact as POSITIVE, NEGATIVE, or NEUTRAL
+    - Indicate time horizon: intraday / short-term / medium-term
+
+    Keep content general and informational; do NOT provide personalized advice.
+
+  expected_output: >-
+    A Markdown section with:
+    - 2-3 sentence market tone overview
+    - 5 key news items with headline, tickers, source, link, time horizon,
+      impact tag, and 2-3 sentence analysis
+  agent: researcher
+
+analyze_stock_fundamentals:
+  description: >-
+    You are the Fundamental & Technical Financial Analyst. Evaluate each stock's
+    fundamental profile using the top-mentioned stocks from daily market research.
+
+    Objectives:
+    - Collect key ratios: P/E, D/E, ROE, EPS, dividend yield
+    - Evaluate VALUE (cheap/fair/expensive), GROWTH (strong/moderate/weak),
+      STABILITY (high/medium/low)
+    - Rate each as GREEN (attractive), YELLOW (mixed), RED (concerning)
+
+  expected_output: >-
+    Markdown with:
+    1) Table with Ticker, Company, Sector, P/E, D/E, ROE, EPS, Value/Growth/Stability ratings
+    2) 4-8 sentence summary of strongest and riskiest names
+  agent: analyst
+
+run_stock_prediction_model:
+  description: >-
+    You are the Quantitative ML Signals Engineer. Generate short-horizon directional
+    signals for the top trending stocks using rules-based approach.
+
+    Objectives:
+    - Use momentum, volatility, and trend indicators
+    - Output predicted_direction (up/down/neutral), confidence_score (0-1),
+      horizon_days, brief_rationale
+    - Present signals as model-based and uncertain
+
+  expected_output: >-
+    A JSON array of up to 10 objects with ticker, predicted_direction,
+    confidence_score, horizon_days, brief_rationale.
+    Output ONLY raw JSON (no Markdown fences).
+  agent: ml_engineer
+
+create_stock_plan:
+  description: >-
+    You are the Investment Strategy Planner. Integrate market research,
+    fundamentals, and ML signals to construct a high-level stock idea plan.
+
+    Objectives:
+    - Select exactly 3 focal tickers supported by news + fundamentals + model
+    - For each: thesis, primary drivers, time horizon, risk snapshot
+    - Phrase as general strategy, not individual recommendations
+
+  expected_output: >-
+    Markdown with:
+    1) 3-5 sentence overview of today's stance
+    2) Table with 3 stocks: Ticker, Thesis, Main_Drivers, Time_Horizon, Risk_Snapshot
+    3) 3-5 bullet risk reminders including informational-only disclaimer
+  agent: planner
+
+write_stock_report:
+  description: >-
+    You are the Daily Market & Stock Brief Writer. Draft a concise, engaging
+    daily stock newsletter using all upstream analysis.
+
+    Objectives:
+    - 400-700 words, Markdown format
+    - Sections: Title, Market Overview, Key Drivers, Featured Stocks, Model & Risk Notes, Disclaimer
+    - Professional, neutral tone; no hype or promises
+
+  expected_output: >-
+    Markdown newsletter with H1 title, H2 sections, 400-700 words covering
+    market context, 3 featured stocks, model insights, risks, and disclaimer.
+  agent: writer
+
+review_and_finalize_report:
+  description: >-
+    You are the Editorial Lead & Quality Gate. Review the draft newsletter
+    for accuracy, balance, compliance, and polish.
+
+    Objectives:
+    - Edit for clarity, coherence, professional tone, grammar
+    - Ensure factual consistency, fact/opinion separation, balanced risks
+    - Verify no personalized advice, no unrealistic promises
+    - Ensure disclaimer is present and visible
+
+  expected_output: >-
+    Finalized Markdown newsletter that improves tone and readability,
+    differentiates facts/analysis/opinion, includes clear disclaimer.
+  agent: senior_writer
+
