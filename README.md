@@ -19,7 +19,7 @@ Every trading day, discover, analyze, and summarize stocks with interesting risk
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                          ║
-║                        🚀  AUTONOMOUS STOCK RESEARCH SYSTEM  🚀                          ║
+║                          AUTONOMOUS STOCK RESEARCH SYSTEM                            ║
 ║                                                                                          ║
 ╠══════════════════════════════════════════════════════════════════════════════════════════╣
 ║                                                                                          ║
