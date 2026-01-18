@@ -1,0 +1,33 @@
+[project]
+name = "agentic_stock_analysis"
+version = "0.1.0"
+description = "Autonomous Multi-Agent Stock Research System using CrewAI"
+authors = [{ name = "Your Name", email = "you@example.com" }]
+requires-python = ">=3.10,<3.14"
+dependencies = [
+    "crewai[anthropic,tools]==1.5.0",
+    "yfinance>=0.2.36",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+]
+
+[project.scripts]
+# Main entry point - runs the full daily stock research workflow
+agentic_stock_analysis = "agentic_stock_analysis.main:run"
+run_crew = "agentic_stock_analysis.main:run"
+
+# Focused analysis on specific tickers
+run_focused = "agentic_stock_analysis.main:run_focused"
+
+# Training, testing, and replay utilities
+train = "agentic_stock_analysis.main:train"
+replay = "agentic_stock_analysis.main:replay"
+test = "agentic_stock_analysis.main:test"
+run_with_trigger = "agentic_stock_analysis.main:run_with_trigger"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.crewai]
+type = "crew"
