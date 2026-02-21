@@ -16,6 +16,13 @@ Every trading day, discover, analyze, and summarize stocks with interesting risk
 
 ## 🏗️ System Architecture
 
+<div align="center">
+  <img src="docs/architecture.svg" alt="System Architecture" width="100%"/>
+</div>
+
+<details>
+<summary>View ASCII Architecture</summary>
+
 ```
 ╔══════════════════════════════════════════════════════════════════════════════════════════╗
 ║                                                                                          ║
@@ -113,6 +120,8 @@ Every trading day, discover, analyze, and summarize stocks with interesting risk
 ║                                                                                          ║
 ╚══════════════════════════════════════════════════════════════════════════════════════════╝
 ```
+
+</details>
 
 ---
 
